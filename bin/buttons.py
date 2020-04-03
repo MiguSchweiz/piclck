@@ -6,17 +6,6 @@ import os
 
 import touchphat
 
-print("""
-
-Touch pHAT: Buttons Demo
-
-Lights up each LED in turn, then detects your button presses.
-
-Press a button to see the corresponding LED light up, and the name printed.
-
-Press Ctrl+C to exit!
-
-""")
 
 for pad in ['Back','A','B','C','D','Enter']:
     touchphat.set_led(pad, True)
@@ -30,5 +19,19 @@ def handle_touch(event):
 	touchphat.set_led(event.name, False)
 	
     
+@touchphat.on_touch('D')
+def handle_touch(event):
+        os.system('/home/pi/piclck/bin/playStream.sh')
+        touchphat.set_led(event.name, False)
+
+@touchphat.on_touch('A')
+def handle_touch(event):
+        os.system('/home/pi/piclck/bin/alarmctl.sh stop')
+        touchphat.set_led(event.name, False)
+
+@touchphat.on_touch('Back')
+def handle_touch(event):
+        os.system('/home/pi/piclck/bin/alarmctl.sh slum')
+        touchphat.set_led(event.name, False)
 
 signal.pause()
