@@ -10,7 +10,10 @@ while true; do
     dow=`date '+%u'`
     hr=`date '+%H'`
     mn=`date '+%M'`
-    [ -f /home/pi/.alarmOn ] &&  sleep 1 && continue
+    if [ -f /home/pi/.alarmOn ]; then
+        sleep 1
+        continue
+    fi
     for d in $adw; do
         if [ "$d" -eq "$dow" ]&&[ "$hr" -eq "$ahr" ]&&[ "$mn" -eq "$amn" ]&&[ 1 -eq "$act" ]; then
             /home/pi/piclck/bin/playStream.sh

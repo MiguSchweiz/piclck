@@ -10,12 +10,11 @@ After=network.target
 Type=simple
 ## here we can set custom environment variables
 ExecStart=/home/pi/piclck/bin/alarms.sh
-ExecSTop=/home/pi/piclck/bin/stopAlarms.sh
+ExecStop=/home/pi/piclck/bin/stopAlarms.sh
 ### NOTE: you can have multiple `ExecStop` lines
 # don't use 'nobody' if your script needs to access user files
 # (if User is not set the service will run as root)
 User=pi
-RemainAfterExit=true
 
 # Useful during debugging; remove it once the service is working
 #StandardOutput=console

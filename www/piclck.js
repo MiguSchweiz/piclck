@@ -63,6 +63,7 @@ function mouseListeners(){
 		if (mod){
 			setAlarm();
 			buttonSet(false);
+			mod=false;
 		}
 	});
 }
