@@ -1,5 +1,5 @@
 #!/bin/bash
-slum=`cat /home/pi/.alarms | awk -F ";" '{ print $5 }'`
+slum=`cat /home/pi/piclck/www/alarms | awk -F ";" '{ print $5 }'`
 if [ "$1" == "stop" ];then
     pkill vlc
     rm /home/pi/.alarmOn

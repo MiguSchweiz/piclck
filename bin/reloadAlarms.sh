@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl restart alarms
+sudo systemctl restart alarms

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PiClock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <link href="piclck.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="piclck.js"></script>
+	<link rel="image_src" href="img/raspberry-pi.png" />
+    <meta property="og:image" content="img/raspberry-pi.png"/>
+	<link rel="icon" type="image/ico"  href="img/favicon.ico">
+</head>
+
+<body class="body" id="body">
+	<div class="desktop" id="desktop">
+		<div class="dtit" id="dtit">Pi Clock Settings</div>
+		<div class="dtime" id="dtime">
+			<input type="time" class="atime" id="atime" min="00:00" max="23:59" required>
+		</div>
+		<div class="dwd" id="dwd">
+			<div class="weekDays-selector">
+			  <input type="checkbox" id="mon" class="weekday" />
+			  <label for="mon">M</label>
+			  <input type="checkbox" id="tue" class="weekday" />
+			  <label for="tue">T</label>
+			  <input type="checkbox" id="wed" class="weekday" />
+			  <label for="wed">W</label>
+			  <input type="checkbox" id="thu" class="weekday" />
+			  <label for="thu">T</label>
+			  <input type="checkbox" id="fri" class="weekday" />
+			  <label for="fri">F</label>
+			  <input type="checkbox" id="sat" class="weekday" />
+			  <label for="sat">S</label>
+			  <input type="checkbox" id="sun" class="weekday" />
+			  <label for="sun">S</label>
+			</div>	
+		</div>
+		<div class="bset" id="bset">SET</div>
+
+		
+	</div>
+</body>

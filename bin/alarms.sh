@@ -1,8 +1,8 @@
 #!/bin/bash
-adw=`cat /home/pi/.alarms|awk -F ';' '{ print $1}'`
-ahr=`cat /home/pi/.alarms|awk -F ';' '{ print $2}'`
-amn=`cat /home/pi/.alarms|awk -F ';' '{ print $3}'`
-act=`cat /home/pi/.alarms|awk -F ';' '{ print $4}'`
+adw=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $1}'`
+ahr=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $2}'`
+amn=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $3}'`
+act=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $4}'`
 rm /home/pi/.alarmOn
 
 
@@ -14,6 +14,7 @@ while true; do
     for d in $adw; do
         if [ "$d" -eq "$dow" ]&&[ "$hr" -eq "$ahr" ]&&[ "$mn" -eq "$amn" ]&&[ 1 -eq "$act" ]; then
             /home/pi/piclck/bin/playStream.sh
+            echo on
             touch /home/pi/.alarmOn
         fi 
     done 
