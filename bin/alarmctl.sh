@@ -8,5 +8,6 @@ elif [ "$1" == "slum" ];then
     pkill vlc
     pkill playStream.sh
     sleep $slum
-    /home/pi/piclck/bin/playStream.sh
+    /home/pi/piclck/bin/playStream.sh &
+    touch /home/pi/.alarmOn
 fi

@@ -18,7 +18,7 @@ while true; do
     fi
     for d in $adw; do
         if [ "$d" -eq "$dow" ]&&[ "$hr" -eq "$ahr" ]&&[ "$mn" -eq "$amn" ]&&[ 1 -eq "$act" ]; then
-            /home/pi/piclck/bin/playStream.sh
+            /home/pi/piclck/bin/playStream.sh &
             echo on
             touch /home/pi/.alarmOn
         fi 
