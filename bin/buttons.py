@@ -2,7 +2,7 @@
 
 import signal
 import time
-import os
+import os, subprocess
 
 import touchphat
 
@@ -21,11 +21,13 @@ def handle_touch(event):
     
 @touchphat.on_touch('D')
 def handle_touch(event):
-        os.system('/home/pi/piclck/bin/playStream.sh')
+        os.system('/home/pi/piclck/bin/playStream.sh &')
+        time.sleep(0.1)
         touchphat.set_led(event.name, False)
 
 @touchphat.on_touch('A')
 def handle_touch(event):
+        pid = os.fork()
         os.system('/home/pi/piclck/bin/alarmctl.sh stop')
         touchphat.set_led(event.name, False)
 

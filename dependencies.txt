@@ -65,3 +65,14 @@ curl -X PUT -H 'Content-Type: application/json' -d '{"on":false}' 'http://192.16
 # add to sudoers
 www-data ALL = NOPASSWD: /bin/systemctl
 
+# disable desktop in raspi-config
+sudo raspi-config
+
+
+
+# display driver
+
+git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git
+cd Adafruit_Python_LED_Backpack/
+sudo python setup.py install
+

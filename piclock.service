@@ -1,0 +1,23 @@
+[Unit]
+Description=start clock service
+## make sure we only start the service after network is up
+Wants=network-online.target
+After=network.target
+
+[Service]
+## use 'Type=forking' if the service backgrounds itself
+## other values are Type=simple (default) and Type=oneshot
+Type=simple
+## here we can set custom environment variables
+ExecStart=/home/pi/piclck/bin/clock.py
+#ExecStop=/home/pi/piclck/bin/stopAlarms.sh
+### NOTE: you can have multiple `ExecStop` lines
+# don't use 'nobody' if your script needs to access user files
+# (if User is not set the service will run as root)
+User=pi
+
+# Useful during debugging; remove it once the service is working
+#StandardOutput=console
+
+[Install]
+WantedBy=multi-user.target

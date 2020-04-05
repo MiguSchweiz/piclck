@@ -4,12 +4,14 @@ ahr=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $2}'`
 amn=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $3}'`
 act=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $4}'`
 rm /home/pi/.alarmOn
+cat /home/pi/piclck/www/alarms
 
 
 while true; do
-    dow=`date '+%u'`
+    dow=`date '+%w'`
     hr=`date '+%H'`
     mn=`date '+%M'`
+    #echo $dow":"$hr":"$mn
     if [ -f /home/pi/.alarmOn ]; then
         sleep 1
         continue
