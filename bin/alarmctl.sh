@@ -5,9 +5,13 @@ if [ "$1" == "stop" ];then
     pkill playStream.sh
     rm /home/pi/.alarmOn
 elif [ "$1" == "slum" ];then
+    if [ -f /home/pi/.slum ];then
+        exit
+    fi
+    touch /home/pi/.slum
     pkill vlc
     pkill playStream.sh
     sleep $slum
     /home/pi/piclck/bin/playStream.sh &
-    touch /home/pi/.alarmOn
+    rm /home/pi/.slum
 fi

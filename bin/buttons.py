@@ -33,6 +33,7 @@ def handle_touch(event):
 
 @touchphat.on_touch('Back')
 def handle_touch(event):
+        print("slum")
         os.system('/home/pi/piclck/bin/alarmctl.sh slum')
         touchphat.set_led(event.name, False)
 
