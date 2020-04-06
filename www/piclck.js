@@ -14,6 +14,7 @@ function getAConf(){
 		st=aconf[5];
 		$('#atime').val(hr+":"+mn);
 		for (d in wd){
+			console.log(wd+":");
 			if ( wd[d] == 0 ){
 				$('#sun').attr('checked', true); 
 			}if ( wd[d] == 1 ){
@@ -93,6 +94,7 @@ function mouseListeners(){
 
 function selectStation(id){
 	resetButtons();
+	console.log(id);
 	$( id ).css("border-bottom-color","#FA9127");
 }
 function resetButtons(){
