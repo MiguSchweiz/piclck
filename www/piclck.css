@@ -97,6 +97,7 @@ input[type=time] {
 	margin-left: 0px;
 	margin-bottom: 0px;
 	margin: auto;
+	padding-left: 5px;
 
   border: solid;
   text-align: center;
@@ -151,6 +152,16 @@ input[type=time] {
 
   background: #FA9127;
   color: #ffffff;
+}
+.tradio {
+	padding-bottom: 20px;
+	margin:auto;
+}
+
+.cs {
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+	border-bottom-width: 3px;
 }
 
 .bset {

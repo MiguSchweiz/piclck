@@ -1,33 +1,38 @@
 var mod=false;
+var st=0;
 
 
 function getAConf(){
 	jQuery.get("get.php", function(d) {
+		console.log(d);
 		aconf=d.toString().split(";");
 		wd=aconf[0].split(" ");
 		hr=aconf[1];
 		mn=aconf[2];
 		en=aconf[3];
 		ss=aconf[4];
+		st=aconf[5];
 		$('#atime').val(hr+":"+mn);
-		
 		for (d in wd){
-			if ( d == "0" ){
+			console.log(wd+":");
+			console.log(d+":");
+			if ( wd[d] == 0 ){
 				$('#sun').attr('checked', true); 
-			}else if ( d == "1" ){
+			}if ( wd[d] == 1 ){
 				$('#mon').attr('checked', true); 
-			}else if ( d == "2" ){
+			}if ( wd[d] == 2 ){
 				$('#tue').attr('checked', true); 
-			}else if ( d == "3" ){
+			}if ( wd[d] == 3 ){
 				$('#wed').attr('checked', true); 
-			}else if ( d == "4" ){
+			}if ( wd[d] == 4 ){
 				$('#thu').attr('checked', true); 
-			}else if ( d == "5" ){
+			}if ( wd[d] == 5 ){
 				$('#fri').attr('checked', true); 
-			}else if ( d == "6" ){
+			}if ( wd[d] == 6 ){
 				$('#sat').attr('checked', true); 
 			} 
-		}	
+		}
+		selectStation("#a_"+st);
 	});
 }
 
@@ -66,8 +71,39 @@ function mouseListeners(){
 			mod=false;
 		}
 	});
+	$( "#a_1" ).mousedown(function() {
+		selectStation("#a_1")
+		buttonSet(true);
+		st="1";
+	});
+	$( "#a_2" ).mousedown(function() {
+		selectStation("#a_2")
+		buttonSet(true);
+		st="2";
+	});
+	$( "#a_3" ).mousedown(function() {
+		selectStation("#a_3")
+		buttonSet(true);		
+		st="3";
+	});
+	$( "#a_4" ).mousedown(function() {
+		selectStation("#a_4")	
+		buttonSet(true);
+		st="4";
+	});
 }
 
+function selectStation(id){
+	resetButtons();
+	console.log(id);
+	$( id ).css("border-bottom-color","#FA9127");
+}
+function resetButtons(){
+	$( "#a_1" ).css("border-bottom-color","#ffffff");
+	$( "#a_2" ).css("border-bottom-color","#ffffff");
+	$( "#a_3" ).css("border-bottom-color","#ffffff");
+	$( "#a_4" ).css("border-bottom-color","#ffffff");
+}
 
 function setAlarm(){
 	time=$( "#atime" ).val().replace(":",";");
@@ -89,7 +125,7 @@ function setAlarm(){
 	} 
 	wdy=wdy.trim();
 	
-	conf=wdy+";"+time+";1;600";
+	conf=wdy+";"+time+";1;600;"+st;
 	console.log(conf);
 	jQuery.get("set.php?data="+encodeURIComponent(conf), function(d) {
 		console.log(d);
