@@ -63,7 +63,7 @@ curl -X PUT -H 'Content-Type: application/json' -d '{"on":false}' 'http://192.16
 
 
 # add to sudoers
-www-data ALL = NOPASSWD: /bin/systemctl
+ept: application/json" "https://api.openweathermap.org/data/2.5/weather?id=7287130&appid=73356ad2c25f2fed810764e8bd2c005e&units=metric"
 
 # disable desktop in raspi-config
 sudo raspi-config
@@ -76,3 +76,9 @@ git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git
 cd Adafruit_Python_LED_Backpack/
 sudo python setup.py install
 
+
+
+# openweather stuff
+7103fc0b10e19276b30724f6fe25fdfb
+scuol id=7287130
+curl -X GET -H "Accept: application/json" "https://api.openweathermap.org/data/2.5/weather?id=7287130&appid=73356ad2c25f2fed810764e8bd2c005e&units=metric"
