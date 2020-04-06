@@ -13,25 +13,24 @@ for pad in ['Back','A','B','C','D','Enter']:
     touchphat.set_led(pad, False)
     time.sleep(0.1)
 
-@touchphat.on_touch('Enter')
+@touchphat.on_release('Enter')
 def handle_touch(event):
 	os.system('/home/pi/piclck/bin/lightsoff.sh')
 	touchphat.set_led(event.name, False)
 	
     
-@touchphat.on_touch('D')
+@touchphat.on_release('D')
 def handle_touch(event):
         os.system('/home/pi/piclck/bin/playStream.sh &')
         time.sleep(0.1)
         touchphat.set_led(event.name, False)
 
-@touchphat.on_touch('A')
+@touchphat.on_release('A')
 def handle_touch(event):
-        pid = os.fork()
         os.system('/home/pi/piclck/bin/alarmctl.sh stop')
         touchphat.set_led(event.name, False)
 
-@touchphat.on_touch('Back')
+@touchphat.on_release('Back')
 def handle_touch(event):
         print("slum")
         os.system('/home/pi/piclck/bin/alarmctl.sh slum')
