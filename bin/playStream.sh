@@ -16,13 +16,15 @@ elif [ $st -eq 2 ];then
     stat="http://stream.srg-ssr.ch/m/drsvirus/mp3_128"
 elif [ $st -eq 3 ];then
     stat="http://www.tm-radio.com:8000/tribalmixes"
-elif [ $st -eq 3 ];then
+elif [ $st -eq 4 ];then
     stat="http://live.protonradio.com/"
+elif [ $st -eq 5 ];then
+    stat="/home/pi/piclck/media/buzzer.wav"
 fi
 
 sudo echo connect 00:11:2D:5E:52:F9 |bluetoothctl
 
-cvlc --volume-step=256 $stat 2>&1 >/dev/null &
+cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
 
 sleep 5
 
@@ -36,7 +38,7 @@ while true; do
         fi
         pkill vlc
         sudo echo connect 00:11:2D:5E:52:F9 |bluetoothctl
-        cvlc --volume-step=256 $stat 2>&1 >/dev/null &
+        cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
         ((ecnt=ecnt+1))
     fi
     sleep 5

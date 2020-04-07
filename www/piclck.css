@@ -159,11 +159,24 @@ input[type=time] {
 }
 
 .cs {
+	cursor: pointer;
 	border-bottom-style: solid;
 	border-bottom-color: #ffffff;
 	border-bottom-width: 3px;
 }
-
+.button{
+	font-family: "helvetica";
+	text-align: center;
+	color: #FA9127;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-style: solid;
+	border-color: #FA9127;
+	border-width: 1px;
+	cursor: pointer;
+	margin-top:-6px;
+}
 .bset {
 	cursor: pointer;
 	color: #FA9127;
