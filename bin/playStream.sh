@@ -7,9 +7,13 @@ if [ $? -ne 0 ]; then
     exit
 fi
 
+
 ecnt=0
 
 st=`cat /home/pi/piclck/www/alarms | awk -F ";" '{ print $6 }'`
+if [ "$1" != "" ];then
+    st=4
+fi
 if [ $st -eq 1 ];then
     stat="http://stream.srg-ssr.ch/m/drs3/mp3_128"
 elif [ $st -eq 2 ];then
@@ -21,6 +25,7 @@ elif [ $st -eq 4 ];then
 elif [ $st -eq 5 ];then
     stat="/home/pi/piclck/media/buzzer.wav"
 fi
+
 
 sudo echo connect 00:11:2D:5E:52:F9 |bluetoothctl
 
