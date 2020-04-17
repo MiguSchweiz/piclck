@@ -24,6 +24,7 @@ while true; do
             /home/pi/piclck/bin/playStream.sh &
             echo on
             touch /home/pi/.alarmOn
+            sleep 60
         fi 
     done 
     sleep 1
