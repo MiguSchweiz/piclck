@@ -43,7 +43,7 @@ def getData():
 while(True):
     data=""
     data=getData()
-    if data != "":
+    if data.isdigit() :
         segment.clear() 
         segment.print_float(float(data), decimal_digits=1)
         segment.write_display()
