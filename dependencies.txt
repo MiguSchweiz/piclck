@@ -1,5 +1,4 @@
-te /boot/ssh
-
+Create /boot/ssh
 
 # create /boot/wpa_supplicant.conf
 
@@ -9,7 +8,7 @@ update_config=1
 
 network={
     ssid="WLAN-001"
-    psk="wlan-001-pwd"
+    psk="***********"
 }
 
 
