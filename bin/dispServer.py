@@ -17,5 +17,9 @@ conn, addr = s.accept()
 print 'Connected by', addr
 data="Nope"
 while 1:
-        data = conn.recv(1024)
-        conn.send(send)
+        try:
+            data = conn.recv(1024)
+            conn.send(send)
+        except:
+            break
+    
