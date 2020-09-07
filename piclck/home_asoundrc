@@ -1,0 +1,21 @@
+pcm.!default {
+	type asym
+	playback.pcm {
+		type plug
+		slave.pcm "output"
+	}
+	capture.pcm {
+		type plug
+		slave.pcm "input"
+	}
+}
+
+pcm.output {
+	type bluealsa
+	device "00:11:2D:5E:52:F9"
+	profile "a2dp"
+}
+
+ctl.!default {
+	type bluealsa
+}
