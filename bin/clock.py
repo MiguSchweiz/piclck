@@ -36,14 +36,14 @@ def getData():
         data = s.recv(1024)
         s.close()
     except(socket.error):
-        data="" 
+        data="error" 
     return data 
 
 # Continually update the time on a 4 char, 7-segment display
 while(True):
     data=""
     data=getData()
-    if data.isdigit() :
+    if not data=="error" :
         segment.clear() 
         segment.print_float(float(data), decimal_digits=1)
         segment.write_display()
