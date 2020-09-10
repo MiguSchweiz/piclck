@@ -43,7 +43,7 @@ while true; do
         fi
         pkill vlc
         sudo echo connect EC:81:93:55:39:D0|bluetoothctl
-        cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
+        cvlc --volume-step=256 --loop --file-caching=10000 $stat 2>&1 >/dev/null &
         ((ecnt=ecnt+1))
     fi
     sleep 5

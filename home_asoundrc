@@ -1,3 +1,7 @@
+defaults.bluealsa.interface "hci0"
+defaults.bluealsa.device "EC:81:93:55:39:D0"
+defaults.bluealsa.profile "a2dp"
+defaults.bluealsa.delay 10000
 pcm.!default {
 	type asym
 	playback.pcm {
@@ -12,7 +16,7 @@ pcm.!default {
 
 pcm.output {
 	type bluealsa
-	device "00:11:2D:5E:52:F9"
+	device "EC:81:93:55:39:D0"
 	profile "a2dp"
 }
 
