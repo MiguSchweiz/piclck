@@ -34,7 +34,7 @@ cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
 sleep 5
 
 while true; do
-    sudo echo info EC:81:93:55:39:D0 |bluetoothctl|grep Connected|grep yes >/dev/null
+    echo info EC:81:93:55:39:D0 |bluetoothctl|grep Connected|grep yes >/dev/null
     if [ $? -ne 0 ];then
         if [ $ecnt -eq 1000 ];then
             echo "restart bluetooth..."
@@ -42,7 +42,7 @@ while true; do
             ecnt=0
         fi
         pkill vlc
-        sudo echo connect EC:81:93:55:39:D0|bluetoothctl
+        echo connect EC:81:93:55:39:D0|bluetoothctl
         cvlc --volume-step=256 --loop --file-caching=10000 $stat 2>&1 >/dev/null &
         ((ecnt=ecnt+1))
     fi
