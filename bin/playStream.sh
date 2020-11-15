@@ -12,7 +12,7 @@ ecnt=0
 
 st=`cat /home/pi/piclck/www/alarms | awk -F ";" '{ print $6 }'`
 if [ "$1" != "" ];then
-    st=4
+    st=1
 fi
 if [ $st -eq 1 ];then
     stat="http://stream.srg-ssr.ch/m/drs3/mp3_128"
@@ -26,25 +26,5 @@ elif [ $st -eq 5 ];then
     stat="/home/pi/piclck/media/buzzer.wav"
 fi
 
-
-sudo echo connect EC:81:93:55:39:D0 |bluetoothctl
-
 cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
 
-sleep 5
-
-while true; do
-    echo info EC:81:93:55:39:D0 |bluetoothctl|grep Connected|grep yes >/dev/null
-    if [ $? -ne 0 ];then
-        if [ $ecnt -eq 1000 ];then
-            echo "restart bluetooth..."
-            sudo systemctl restart bluetooth
-            ecnt=0
-        fi
-        pkill vlc
-        echo connect EC:81:93:55:39:D0|bluetoothctl
-        cvlc --volume-step=256 --loop --file-caching=10000 $stat 2>&1 >/dev/null &
-        ((ecnt=ecnt+1))
-    fi
-    sleep 5
-done

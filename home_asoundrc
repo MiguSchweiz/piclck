@@ -1,25 +1,15 @@
-defaults.bluealsa.interface "hci0"
-defaults.bluealsa.device "EC:81:93:55:39:D0"
-defaults.bluealsa.profile "a2dp"
-defaults.bluealsa.delay 10000
 pcm.!default {
-	type asym
-	playback.pcm {
-		type plug
-		slave.pcm "output"
-	}
-	capture.pcm {
-		type plug
-		slave.pcm "input"
-	}
-}
-
-pcm.output {
-	type bluealsa
-	device "EC:81:93:55:39:D0"
-	profile "a2dp"
+        type plug
+        slave{
+                #format S32_LE
+                #rate 96000
+                #pcm "dmixer"
+                pcm "hw:0,0"
+                channels 2
+        }
 }
 
 ctl.!default {
-	type bluealsa
+        type hw
+        card 0
 }
