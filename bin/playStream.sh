@@ -21,10 +21,10 @@ elif [ $st -eq 2 ];then
 elif [ $st -eq 3 ];then
     stat="http://www.tm-radio.com:8000/tribalmixes"
 elif [ $st -eq 4 ];then
-    stat="http://live.protonradio.com/"
+    stat="https://shoutcast.protonradio.com/"
 elif [ $st -eq 5 ];then
     stat="/home/pi/piclck/media/buzzer.wav"
 fi
 
-cvlc --volume-step=256 --loop $stat 2>&1 >/dev/null &
+mplayer -cache 512 -loop 0 $stat 2>&1 >/dev/null &
 

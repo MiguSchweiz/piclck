@@ -22,7 +22,7 @@ ExecStart=/usr/lib/bluetooth/bluetoothd --compat --noplugin=sap -E
 
 sudo apt install bluealsa 
 
-sudo apt-get install apache2 php7.0 libapache2-mod-php
+sudo apt-get install apache2 php7.0 libapache2-mod-php mplayer
 
 
 # pair speakers
