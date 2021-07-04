@@ -1,5 +1,7 @@
 #!/bin/bash
-exec >/tmp/piclck.log
+#exec >>/tmp/apiclck.log
+echo "### alarm"
+date
 adw=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $1}'`
 ahr=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $2}'`
 amn=`cat /home/pi/piclck/www/alarms|awk -F ';' '{ print $3}'`
@@ -19,8 +21,10 @@ while true; do
     fi
     for d in $adw; do
         if [ "$d" -eq "$dow" ]&&[ "$hr" -eq "$ahr" ]&&[ "$mn" -eq "$amn" ]&&[ 1 -eq "$act" ]; then
-            echo "####"´date´
+            echo "#### alarm"
+            date
             echo $hr":"$mn" - "$ahr":"$amn
+            #cp /tmp/piclck.log /tmp/piclck_1.log
             /home/pi/piclck/bin/playStream.sh &
             echo on
             touch /home/pi/.alarmOn

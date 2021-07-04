@@ -1,6 +1,10 @@
 #!/bin/bash
-#echo >/tmp/piclck.log
-#exec 2>&1 >>/tmp/piclck.log
+echo "### playstream"
+#exec 2>&1 >>/tmp/piclck_ps.log
+echo "### playstream"
+date
+ps -ef |grep $PPID|grep -v grep|grep alarms.sh
+[ $? -eq 1 ]&& exit
 ps -ef|grep -v grep|grep playStream|grep bash|wc -l|egrep '1$'
 
 if [ $? -ne 0 ]; then
@@ -15,7 +19,7 @@ if [ "$1" != "" ];then
     st=1
 fi
 if [ $st -eq 1 ];then
-    stat="http://stream.srg-ssr.ch/m/drs3/mp3_128"
+    stat="https://stream.srg-ssr.ch/m/drs3/mp3_128"
 elif [ $st -eq 2 ];then
     stat="http://stream.srg-ssr.ch/m/drsvirus/mp3_128"
 elif [ $st -eq 3 ];then
@@ -27,4 +31,5 @@ elif [ $st -eq 5 ];then
 fi
 
 mplayer -cache 512 -loop 0 $stat 2>&1 >/dev/null &
+#mplayer $stat
 

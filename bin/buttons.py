@@ -19,11 +19,11 @@ def handle_touch(event):
 	touchphat.set_led(event.name, False)
 	
     
-@touchphat.on_release('D')
-def handle_touch(event):
-        os.system('/home/pi/piclck/bin/playStream.sh st &')
-        time.sleep(0.1)
-        touchphat.set_led(event.name, False)
+#@touchphat.on_release('D')
+#def handle_touch(event):
+#        os.system('/home/pi/piclck/bin/playStream.sh st &')
+#        time.sleep(0.1)
+#        touchphat.set_led(event.name, False)
 
 @touchphat.on_release('A')
 def handle_touch(event):
