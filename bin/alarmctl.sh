@@ -10,11 +10,13 @@ elif [ "$1" == "slum" ];then
     if [ -f /home/pi/.slum ];then
         exit
     fi
-    touch /home/pi/.slum
-    pkill playStream.sh
-    pkill vlc
-    pkill mplayer
-    sleep $slum
-    /home/pi/piclck/bin/playStream.sh &
-    rm /home/pi/.slum
+    if [ -f /home/pi/.alarmOn ]; then
+        touch /home/pi/.slum
+        pkill playStream.sh
+        pkill vlc
+        pkill mplayer
+        sleep $slum
+        /home/pi/piclck/bin/playStream.sh &
+        rm /home/pi/.slum
+    fi
 fi
