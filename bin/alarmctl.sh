@@ -6,6 +6,7 @@ if [ "$1" == "stop" ];then
     pkill mplayer
     rm /home/pi/.alarmOn
     rm /home/pi/.slum
+    pkill alarmctl.sh
 elif [ "$1" == "slum" ];then
     if [ -f /home/pi/.slum ];then
         exit
