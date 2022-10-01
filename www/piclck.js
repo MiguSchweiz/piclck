@@ -13,9 +13,11 @@ function getAConf(){
 		ss=aconf[4];
 		st=aconf[5];
 		$('#atime').val(hr+":"+mn);
+                if ( wd[0]!="" ){
 		for (d in wd){
-			console.log(wd+":");
+                        console.log(d);
 			if ( wd[d] == 0 ){
+                                console.log(wd[d]+"-")
 				$('#sun').attr('checked', true); 
 			}if ( wd[d] == 1 ){
 				$('#mon').attr('checked', true); 
@@ -31,7 +33,8 @@ function getAConf(){
 				$('#sat').attr('checked', true); 
 			} 
 		}
-		selectStation("#a_"+st);
+                }
+		//selectStation("#a_"+st);
 		if (st==5){
 			selectButton();	
 		}
