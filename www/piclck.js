@@ -34,7 +34,7 @@ function getAConf(){
 			} 
 		}
                 }
-		//selectStation("#a_"+st);
+		selectStation("#a_"+st);
 		if (st==5){
 			selectButton();	
 		}
