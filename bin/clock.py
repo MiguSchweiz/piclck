@@ -32,7 +32,7 @@ def getData():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((IP, int(PORT)))
-        s.send('get')
+        s.send(b'11111111')
         data = s.recv(1024)
         s.close()
     except(socket.error):

@@ -14,7 +14,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(2)
 conn, addr = s.accept()
-print 'Connected by', addr
+#print 'Connected by', addr
 data="Nope"
 while 1:
         try:
