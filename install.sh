@@ -1,9 +1,23 @@
 #!/bin/bash
 
-sudo apt-get install apache2 php7.0 libapache2-mod-php mplayer git software-properties-common
+#enable i2c
+sudo raspi-config nonint do_i2c 0
 
+#install general apps
+sudo apt-get install apache2 php7.0 libapache2-mod-php mplayer git
 
+#install gh
+GITHUB_CLI_VERSION=$(curl -s "https://api.github.com/repos/cli/cli/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+curl -Lo gh.deb "https://github.com/cli/cli/releases/latest/download/gh_${GITHUB_CLI_VERSION}_linux_armv6.deb"
+sudo dpkg -i gh.deb
 
+# install Pimoroni touchhat stuff
+curl https://get.pimoroni.com/touchphat  | bash
+
+# install Adafruit LED 
+git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git
+cd Adafruit_Python_LED_Backpack/
+sudo python setup.py install
 
 # copy apache config
 sudo cp 000-default.conf /etc/apache2/sites-enabled/
