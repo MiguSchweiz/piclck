@@ -1,8 +1,9 @@
 [Unit]
 Description=start buttons service
 ## make sure we only start the service after network is up
-Wants=network-online.target
-After=network.target
+#Wants=network-online.target
+Requires=dev-i2c\x2d1.device
+After=dev-i2c\x2d1.device
 
 [Service]
 ## use 'Type=forking' if the service backgrounds itself
