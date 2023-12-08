@@ -19,6 +19,10 @@ git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git
 cd Adafruit_Python_LED_Backpack/
 sudo python setup.py install
 
+
+# install bluetooth audio
+sudo install pulseaudio-module-bluetooth
+
 # copy apache config
 sudo cp 000-default.conf /etc/apache2/sites-enabled/
 
