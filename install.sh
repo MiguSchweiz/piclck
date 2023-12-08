@@ -39,7 +39,6 @@ sudo cp piclock.service /etc/systemd/system/
 sudo systemctl enable piclock.service
 sudo systemctl start piclock
 
-echo "### fix for onborad bt interference with wifi"
-echo "see: https://github.com/RPi-Distro/firmware-nonfree/issues/33#issuecomment-1377070808"
+sudo systemctl daemon-reload
 
-echo 'reboot if ready'
+echo '### reboot if ready'
