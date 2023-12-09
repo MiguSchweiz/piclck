@@ -25,6 +25,7 @@ sudo apt install pulseaudio-module-bluetooth
 
 # copy apache config
 sudo cp 000-default.conf /etc/apache2/sites-enabled/
+sudo chmod -R 777 www
 
 # setup services
 sudo cp buttons.service /etc/systemd/system/
