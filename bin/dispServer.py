@@ -8,7 +8,7 @@ PORT = 9090        # Port to listen on (non-privileged ports are > 1023)
 #if sys.argv:
 send = subprocess.check_output('/home/pi/piclck/bin/gettemp.sh').rstrip()
 if send=="":
-    send="error"
+    send=999.9
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
@@ -20,6 +20,7 @@ while 1:
         try:
             data = conn.recv(1024)
             conn.send(send)
-        except:
+            break
+        except():
             break
     
