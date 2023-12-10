@@ -12,32 +12,13 @@
 	padding-bottom: 0px;
 	padding-left: 0px;
 	border-width: 0px;
-	/*background-color: #FA9127;*/
+	background-color: #3A3F46;
 	position: absolute;
 }
 
 .desktop {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
 	margin: auto;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	border-width: 0px;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-color: #FA9127;
-	background-color: #FFFFFF;
-	max-width: 790px;
+	background-color: #3A3F46;
 	height:100%;
 }
 .dtime {
@@ -59,8 +40,8 @@
 	border-left-style: solid;
 	border-right-width: 1px;
 	border-right-style: solid;
-	border-color: #FFFFFF;
-	background-color: #FFFFFF;
+	border-color: #3A3F46;
+	background-color: #3A3F46;
 	max-width: 200px;
 	height: 100px;
 }
@@ -68,40 +49,24 @@
 .dtit {
 	font-family: helvetica;
 	text-align: left;
+	padding-left: 20px;
 	font-size: x-large;
-	color:#FA9127;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
+	color: #E6E6E6;
+	font-weight: bold;
 	margin: auto;
-	padding-top: 20px;
-	padding-right: 0px;
-	padding-bottom: 20px;
-	padding-left: 0px;
-	border-width: 0px;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-bottom-width: 0px;
-	border-bottom-style: solid;
-	border-color: #FFFFFF;
-	background-color: #FFFFFF;
-	max-width: 190px;
+	background-color: #2E3238;
+	max-width: 100%;
+	line-height: 40px;
+	margin-bottom: 20px;
 }
 
 input[type=time] {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
 	margin: auto;
-	padding-left: 5px;
-
+  border-color: #2E3238;
   border: solid;
   text-align: center;
-  color:#FA9127;
+  color:#3683DC;
+  background-color: #2E3238;
   font-size: 60px;
   font-family: helvetica;
   width: 180px;
@@ -116,7 +81,7 @@ input[type=time] {
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-right: 0px;
 	padding-bottom: 0px;
 	padding-left: 0px;
@@ -125,8 +90,8 @@ input[type=time] {
 	border-left-style: solid;
 	border-right-width: 1px;
 	border-right-style: solid;
-	border-color: #FFFFFF;
-	background-color: #FFFFFF;
+	border-color: #3A3F46;
+	background-color: #3A3F46;
 	max-width: 260px;
 	height: 70px;
 }
@@ -136,10 +101,11 @@ input[type=time] {
 }
 
 .weekDays-selector input[type=checkbox] + label {
-	  font-family: helvetica;
+	font-family: helvetica;
   display: inline-block;
   border-radius: 0px;
-  background: #dddddd;
+  background: #2E3238;
+  color: #3683DC;
   height: 40px;
   width: 30px;
   margin-right: 3px;
@@ -149,9 +115,8 @@ input[type=time] {
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-
-  background: #FA9127;
-  color: #ffffff;
+  background: #3683DC;
+  color: #3A3F46;
 }
 .tradio {
 	padding-bottom: 20px;
@@ -161,50 +126,32 @@ input[type=time] {
 .cs {
 	cursor: pointer;
 	border-bottom-style: solid;
-	border-bottom-color: #ffffff;
+	border-bottom-color: #3A3F46;
 	border-bottom-width: 3px;
 }
-.button{
+.cst{
 	font-family: "helvetica";
 	text-align: center;
-	color: #FA9127;
+	color: #E6E6E6;
+	background-color: #2E3238;
 	width: 60px;
 	height: 60px;
 	line-height: 60px;
-	border-style: solid;
-	border-color: #FA9127;
-	border-width: 1px;
 	cursor: pointer;
-	margin-top:-6px;
+	margin-bottom: 3px;
 }
 .bset {
 	cursor: pointer;
-	color: #FA9127;
+	color: #3683DC;
+	line-height: 40px;
 	font-family: helvetica;
 	text-align: center;
 	font-size:large;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
-	margin: auto;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	border-width: 1px;
-	border-style: solid;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-color: #FA9127;
-	background-color: #FFFFFF;
+	font-weight: bold;
+	background-color: #2E3238;
 	max-width: 260px;
+	height: 40px;
+	margin: auto;
 }
 
 

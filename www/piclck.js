@@ -35,9 +35,6 @@ function getAConf(){
 		}
                 }
 		selectStation("#a_"+st);
-		if (st==5){
-			selectButton();	
-		}
 	});
 }
 
@@ -97,7 +94,7 @@ function mouseListeners(){
 		st="4";
 	});
 	$( "#a_5" ).mousedown(function() {
-		selectButton();	
+    selectStation("#a_5")	
 		buttonSet(true);
 		st="5";
 	});
@@ -106,19 +103,15 @@ function mouseListeners(){
 function selectStation(id){
 	resetButtons();
 	console.log(id);
-	$( id ).css("border-bottom-color","#FA9127");
-}
-function selectButton(){
-	resetButtons();
-	$( "#a_5" ).css("border-color","#7D4914");
+	$( id ).css("border-bottom-color","#3683DC");
 }
 
 function resetButtons(){
-	$( "#a_1" ).css("border-bottom-color","#ffffff");
-	$( "#a_2" ).css("border-bottom-color","#ffffff");
-	$( "#a_3" ).css("border-bottom-color","#ffffff");
-	$( "#a_4" ).css("border-bottom-color","#ffffff");
-	$( "#a_5" ).css("border-color","#FA9127");
+	$( "#a_1" ).css("border-bottom-color","#3A3F46");
+	$( "#a_2" ).css("border-bottom-color","#3A3F46");
+	$( "#a_3" ).css("border-bottom-color","#3A3F46");
+	$( "#a_4" ).css("border-bottom-color","#3A3F46");
+	$( "#a_5" ).css("border-bottom-color","#3A3F46");
 }
 
 function setAlarm(){
@@ -151,12 +144,12 @@ function setAlarm(){
 
 function buttonSet(enabled){
 	if (! enabled){
-		$( "#bset" ).css("color", "#FFFFFF");
-		$( "#bset" ).css("background-color", "#FA9127");
+		$( "#bset" ).css("color", "#3683DC");
+		$( "#bset" ).css("background-color", "#2E3238");
 	}else{
 		mod=true;
-		$( "#bset" ).css("color", "#FA9127");
-		$( "#bset" ).css("background-color", "#FFFFFF");
+		$( "#bset" ).css("color", "#3A3F46");
+		$( "#bset" ).css("background-color", "#3683DC");
 	}
 }
 
