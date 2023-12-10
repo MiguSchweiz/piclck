@@ -130,7 +130,7 @@ function setAlarm(){
 	wdy=wdy.trim();
 	conf=wdy+";"+time+";1;600;"+st;
 	jQuery.get("set.php?data="+encodeURIComponent(conf), function(d) {
-		console.log(d);
+		//console.log(d);
 	});
 }
 
@@ -149,5 +149,7 @@ $(document).ready(function() {
 	getAConf();
 	buttonSet(false);
 	eventHandlers();
-	mouseListeners()
+	mouseListeners();
+	const element = document.getElementById("atime");
+	$( "#dtime").css("width",element.offsetWidth);
 });

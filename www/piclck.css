@@ -21,30 +21,7 @@
 	background-color: #3A3F46;
 	height:100%;
 }
-.dtime {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
-	margin: auto;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	border-width: 0px;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-color: #3A3F46;
-	background-color: #3A3F46;
-	max-width: 200px;
-	height: 100px;
-}
+
 
 .dtit {
 	font-family: helvetica;
@@ -59,18 +36,24 @@
 	line-height: 40px;
 	margin-bottom: 20px;
 }
-
-input[type=time] {
+.dtime {
 	margin: auto;
-  border-color: #2E3238;
+	padding-right: 8px;
+}
+/*input[type=time] {*/
+.atime {
+  border-color: #3683DC;
   border: solid;
+  border-width: 1px;
   text-align: center;
   color:#3683DC;
   background-color: #2E3238;
   font-size: 60px;
   font-family: helvetica;
-  width: 180px;
+  width:246px;
+  height: 80px;
 }
+
 .dwd {
 	margin-top: 0px;
 	margin-right: 0px;
@@ -81,7 +64,7 @@ input[type=time] {
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	padding-top: 10px;
+	padding-top: 30px;
 	padding-right: 0px;
 	padding-bottom: 0px;
 	padding-left: 0px;
