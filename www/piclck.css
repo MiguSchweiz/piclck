@@ -138,7 +138,7 @@ input[type=time] {
 .weekDays-selector input[type=checkbox] + label {
 	  font-family: helvetica;
   display: inline-block;
-  border-radius: 6px;
+  border-radius: 0px;
   background: #dddddd;
   height: 40px;
   width: 30px;

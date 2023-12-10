@@ -1,21 +1,18 @@
 #!/usr/bin/env python
 import socket,subprocess,sys
 
-HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
-PORT = 9090        # Port to listen on (non-privileged ports are > 1023)
+HOST = '127.0.0.1'
+PORT = 9090
 
-
-#if sys.argv:
 send = subprocess.check_output('/home/pi/piclck/bin/gettemp.sh').rstrip()
-if send=="":
-    send=999.9
+if len(send)==0:
+    send=b'999.9'
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(2)
 conn, addr = s.accept()
-#print 'Connected by', addr
-data="Nope"
+data=b'1'
 while 1:
         try:
             data = conn.recv(1024)
