@@ -22,7 +22,6 @@
 	height:100%;
 }
 
-
 .dtit {
 	font-family: helvetica;
 	text-align: left;
@@ -36,15 +35,14 @@
 	line-height: 40px;
 	margin-bottom: 20px;
 }
+
 .dtime {
 	margin: auto;
 	padding-right: 8px;
 }
-/*input[type=time] {*/
-.atime {
-  border-color: #3683DC;
-  border: solid;
-  border-width: 1px;
+
+input[type=time] {
+  border: none;
   text-align: center;
   color:#3683DC;
   background-color: #2E3238;
@@ -52,6 +50,11 @@
   font-family: helvetica;
   width:246px;
   height: 80px;
+}
+
+input[type=time]:focus {
+  outline: none;
+  border: none;
 }
 
 .dwd {
