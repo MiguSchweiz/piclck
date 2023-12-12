@@ -16,6 +16,7 @@ function getAConf(){
 		$('#slum').val(ss);
 		sl=ss;
 		resetWeekDays();
+		$('#cena').attr('checked', false);
 		init=true;
     if ( wd[0]!="" ){
   		for (d in wd){
@@ -35,6 +36,9 @@ function getAConf(){
   				$('#sat').click(); 
   			} 
   		}
+    }
+    if (en == 1){
+      $("#cena").click();
     }
 		selectStation("#a_"+st);
 		init=false;

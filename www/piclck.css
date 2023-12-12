@@ -38,11 +38,60 @@
 
 .alarms {
   background-color: #3A3F46;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 0px;
   max-width: 400px;
   margin-left: 20px;
   margin-right: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.dena {
+  background-color: #2E3238;
+  margin-left: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+  /*margin-right:0px;*/
+  height: 40px;
+}
+.dena input {
+  display: none;
+}
+
+.dena input[type=checkbox] + label {
+	font-family: helvetica;
+  display: inline-block;
+  border-radius: 0px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #2E3238;
+  background: #3A3F46;
+  color: #E6E6E6;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dena input[type=checkbox]:checked + label {
+  background: #E6E6E6;
+  color: #2E3238;
+}
+
+.tena {
+  position: relative;
+  top: -40px;
+  margin-bottom: -20px;
+  left: 40px;
+  font-family: helvetica;
+  color: #E6E6E6;
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+  line-height: 40px;
+  background-color: #2E3238;
+  height: 40px;
+  width: 100px;
 }
 
 .dtime {
@@ -193,6 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
 .dbset {
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px
 }
 .bset {
 	cursor: pointer;
