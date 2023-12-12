@@ -1,64 +1,66 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html5/strict.dtd">
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>PiClock</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-    <link href="piclck.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="piclck.js"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <meta charset="utf-8">
+  <title>PiClock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+  <link href="piclck.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="piclck.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
   <meta property="og:image" content="img/android-chrome-192x192.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="manifest" href="img/site.webmanifest">
-
 </head>
 
 <body class="body" id="body">
 	<div class="desktop" id="desktop">
 		<div class="dtit" id="dtit">Pi Clock Settings</div>
-		<div class="dtime" id="dtime">
-			<input type="time" class="atime" id="atime" min="00:00" max="23:59" required>
+		<div class="alarms" id="alarms">
+  		<div class="dtime" id="dtime">
+  			<input type="time" class="atime" id="atime" min="00:00" max="23:59" required>
+  		</div>
+  		<div class="dwd" id="dwd">
+  			<div class="weekDays-selector" id="weekDays-selector">
+  			  <input type="checkbox" id="mon" class="weekday" />
+  			  <label for="mon" class="lab" id="lmon">M</label>
+  			  <input type="checkbox" id="tue" class="weekday" />
+  			  <label for="tue" class="lab">T</label>
+  			  <input type="checkbox" id="wed" class="weekday" />
+  			  <label for="wed" class="lab">W</label>
+  			  <input type="checkbox" id="thu" class="weekday" />
+  			  <label for="thu" class="lab">T</label>
+  			  <input type="checkbox" id="fri" class="weekday" />
+  			  <label for="fri" class="lab">F</label>
+  			  <input type="checkbox" id="sat" class="weekday" />
+  			  <label for="sat" class="lab">S</label>
+  			  <input type="checkbox" id="sun" class="weekday" />
+  			  <label for="sun" class="lab">S</label>
+  			</div>	
+  		</div>
+  		<table class="tradio">
+  			<tr>
+  				<th class="thss"><div class="cs" ><div id="a_1" class="cst"><img src="img/srf3.jpg" width="60" alt=""/></div></th>
+  				<!--th><div class="cs" id="a_2" ><img src="img/virus.jpg" width="60" alt=""/></div></th!-->
+  				<th class="thss"><div class="cs" ><div id="a_3" class="cst"><img src="img/sr.png" width="60" alt=""/> </div></th>
+  				<th class="thss"><div class="cs" ><div id="a_4" class="cst"><img src="img/proton.png" width="60" alt=""/> </div></th>
+  				<th class="thss"><div class="cs" ><div id="a_5" class="cst">BUZZ</div></div></th>
+  			</tr>
+  		</table>
+  		<div class="dslum"> Slum seconds: <input type="number" id="slum" min="60" max="1200" step="50"/></div>
+      <div class="dbset" id="dbset">
+  		  <div class="bset" id="bset">SET</div>
+      </div>
 		</div>
-		<div class="dwd" id="dwd">
-			<div class="weekDays-selector">
-			  <input type="checkbox" id="mon" class="weekday" />
-			  <label for="mon">M</label>
-			  <input type="checkbox" id="tue" class="weekday" />
-			  <label for="tue">T</label>
-			  <input type="checkbox" id="wed" class="weekday" />
-			  <label for="wed">W</label>
-			  <input type="checkbox" id="thu" class="weekday" />
-			  <label for="thu">T</label>
-			  <input type="checkbox" id="fri" class="weekday" />
-			  <label for="fri">F</label>
-			  <input type="checkbox" id="sat" class="weekday" />
-			  <label for="sat">S</label>
-			  <input type="checkbox" id="sun" class="weekday" />
-			  <label for="sun">S</label>
-			</div>	
-		</div>
-		<table class="tradio">
-			<tr>
-				<th><div class="cs" id="a_1" ><img src="img/srf3.jpg" width="60" alt=""/></div></th>
-				<th><div class="cs" id="a_2" ><img src="img/virus.jpg" width="60" alt=""/></div></th>
-				<th><div class="cs" id="a_3" ><img src="img/sr.png" width="60" alt=""/> </div></th>
-				<th><div class="cs" id="a_4" ><img src="img/proton.png" width="60" alt=""/> </div></th>
-				<th><div class="cs" ID="a_5"><div class="cst">BUZZ</div></div></th>
-			</tr>
-		</table>
-
-		<div class="bset" id="bset">SET</div>
-
-		
+		<div id="log"></div>
 	</div>
 </body>
 </html>

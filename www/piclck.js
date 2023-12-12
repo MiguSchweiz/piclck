@@ -1,5 +1,7 @@
 var mod=false;
 var st=0;
+var init=false;
+var sl=0;
 
 function getAConf(){
 	jQuery.get("get.php", function(d) {
@@ -11,30 +13,67 @@ function getAConf(){
 		ss=aconf[4];
 		st=aconf[5];
 		$('#atime').val(hr+":"+mn);
+		$('#slum').val(ss);
+		sl=ss;
+		resetWeekDays();
+		init=true;
     if ( wd[0]!="" ){
   		for (d in wd){
   			if ( wd[d] == 0 ){
-  				$('#sun').attr('checked', true); 
+  				$('#sun').click(); 
   			}if ( wd[d] == 1 ){
-  				$('#mon').attr('checked', true); 
+  				$('#mon').click(); 
   			}if ( wd[d] == 2 ){
-  				$('#tue').attr('checked', true); 
+  				$('#tue').click(); 
   			}if ( wd[d] == 3 ){
-  				$('#wed').attr('checked', true); 
+  				$('#wed').click(); 
   			}if ( wd[d] == 4 ){
-  				$('#thu').attr('checked', true); 
+  				$('#thu').click(); 
   			}if ( wd[d] == 5 ){
-  				$('#fri').attr('checked', true); 
+  				$('#fri').click(); 
   			}if ( wd[d] == 6 ){
-  				$('#sat').attr('checked', true); 
+  				$('#sat').click(); 
   			} 
   		}
     }
 		selectStation("#a_"+st);
+		init=false;
 	});
 }
 
+function resetWeekDays(){
+  $('#sun').attr('checked', false); 
+  $('#mon').attr('checked', false);  
+  $('#tue').attr('checked', false);  
+  $('#wed').attr('checked', false);  
+  $('#thu').attr('checked', false);
+  $('#fri').attr('checked', false);  
+  $('#sat').attr('checked', false);
+}
+function checkNumber(nr){
+  if (!parseInt(nr)){
+    return sl;
+  }else{
+    if (nr<300){
+      return sl;
+    }
+    buttonSet(true);
+    return nr;
+  }
+}
+
 function eventHandlers(){
+  $( "#slum" ).on('keyup',function(e){
+    if ( e.which == 13 ){
+      document.activeElement.blur();
+      $("#slum").blur();
+    }
+  });
+  $( "#slum" ).change(function() {
+    document.activeElement.blur();
+    $("#slum").blur();
+    $("#slum").val(checkNumber($("#slum").val()));
+  });
 	$( "#atime" ).change(function() {
 		buttonSet(true);
 	});
@@ -98,7 +137,7 @@ function mouseListeners(){
 
 function selectStation(id){
 	resetButtons();
-	$( id ).css("border-bottom-color","#3683DC");
+	$( id ).css("border-bottom-color","#E6E6E6");
 }
 
 function resetButtons(){
@@ -128,28 +167,62 @@ function setAlarm(){
 		wdy+="6 ";
 	} 
 	wdy=wdy.trim();
-	conf=wdy+";"+time+";1;600;"+st;
+	slm=$( "#slum" ).val();
+	sl=slm;
+	conf=wdy+";"+time+";1;"+slm+";"+st;
 	jQuery.get("set.php?data="+encodeURIComponent(conf), function(d) {
 		//console.log(d);
 	});
 }
 
 function buttonSet(enabled){
+  if (init){
+    return;
+  }
 	if (! enabled){
-		$( "#bset" ).css("color", "#3683DC");
+		$( "#bset" ).css("color", "#E6E6E6");
 		$( "#bset" ).css("background-color", "#2E3238");
 	}else{
 		mod=true;
-		$( "#bset" ).css("color", "#3A3F46");
+		$( "#bset" ).css("color", "#E6E6E6");
 		$( "#bset" ).css("background-color", "#3683DC");
 	}
 }
 
+function setWidth(){
+  // Set weekdayselector width
+  const element = document.getElementById("atime");
+	var ow=element.offsetWidth;
+	
+	var wdwa=(ow-(6*5))/7;
+	var wdw=Math.floor(wdwa);
+	var temp = document.querySelectorAll(".lab");
+  for (var i = 0; i < temp.length; i++) {
+    temp[i].style.width = wdw+"px";
+  }
+  //set station selector width
+  var sswa=(ow-(4*60))/3;
+  var ssm=Math.floor(sswa);
+  temp = document.querySelectorAll(".cs");
+  for (var i = 0; i < temp.length; i++) {
+    temp[i].style.paddingRight=ssm+"px";
+  }
+}
+
+$(window).on( "resize", function(){
+  setWidth();
+});
+
 $(document).ready(function() {
+  setWidth();
+  eventHandlers();
 	getAConf();
 	buttonSet(false);
-	eventHandlers();
 	mouseListeners();
-	const element = document.getElementById("atime");
-	$( "#dtime").css("width",element.offsetWidth);
+
+	
+	//$( "#weekDays-selector").css("width",wdw+"px");
+  //$( "#dwd").css("width",element.offsetWidth+10);
+  //$( "#weekDays-selector").css("width",element.offsetWidth);
+  //$( "#alarms").css("width",element.offsetWidth +40);
 });

@@ -12,13 +12,13 @@
 	padding-bottom: 0px;
 	padding-left: 0px;
 	border-width: 0px;
-	background-color: #3A3F46;
+	background-color: #C9C7C7;
 	position: absolute;
 }
 
 .desktop {
 	margin: auto;
-	background-color: #3A3F46;
+	background-color: #C9C7C7;
 	height:100%;
 }
 
@@ -36,20 +36,33 @@
 	margin-bottom: 20px;
 }
 
+.alarms {
+  background-color: #3A3F46;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .dtime {
-	margin: auto;
-	padding-right: 8px;
+	margin-right: 20px;
+	margin-left: 20px;
+	background-color: #2E3238;
 }
 
 input[type=time] {
   border: none;
   text-align: center;
-  color:#3683DC;
+  color: #E6E6E6;
   background-color: #2E3238;
   font-size: 60px;
+  line-height: 80px;
   font-family: helvetica;
-  width:246px;
+  /*margin: 0 auto;*/
   height: 80px;
+  max-width: 400px;
+  width: 95%;
 }
 
 input[type=time]:focus {
@@ -59,29 +72,26 @@ input[type=time]:focus {
 
 .dwd {
 	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+	margin-right: 15px;
+	margin-left: 20px;
 	margin-bottom: 0px;
-	margin: auto;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	padding-top: 30px;
+	padding-top: 20px;
 	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-	border-width: 0px;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-color: #3A3F46;
+	padding-bottom: 17px;
+	/*padding-left: 8px;*/
 	background-color: #3A3F46;
-	max-width: 260px;
-	height: 70px;
+	max-width: 400px;
+	height: 40px;
 }
 
+.lab {
+  width: 30px;
+  margin-right: 3px;
+}
 .weekDays-selector input {
   display: none!important;
 }
@@ -91,53 +101,110 @@ input[type=time]:focus {
   display: inline-block;
   border-radius: 0px;
   background: #2E3238;
-  color: #3683DC;
+  color: #E6E6E6;
   height: 40px;
-  width: 30px;
-  margin-right: 3px;
+  /*width: 30px;
+  margin-right: 3px;*/
   line-height: 40px;
   text-align: center;
   cursor: pointer;
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-  background: #3683DC;
-  color: #3A3F46;
-}
-.tradio {
-	padding-bottom: 20px;
-	margin:auto;
+  background: #E6E6E6;
+  color: #2E3238;
 }
 
+.tradio {
+	padding-bottom: 10px;
+	margin-left: 17px;
+	border-style: none;
+}
+
+.thss {
+  border-style: none;
+  margin: 0px;
+}
 .cs {
 	cursor: pointer;
-	border-bottom-style: solid;
-	border-bottom-color: #3A3F46;
-	border-bottom-width: 3px;
+	padding-right: 0px;
+	padding-left: 0px;
 }
+
 .cst{
 	font-family: "helvetica";
 	text-align: center;
 	color: #E6E6E6;
 	background-color: #2E3238;
 	width: 60px;
-	height: 60px;
+	height: 61px;
 	line-height: 60px;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #3A3F46;
 	cursor: pointer;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+.dslum {
+  font-family: "helvetica";
+	color: #E6E6E6;
+  line-height: 30px;
+  font-size: large; 
+  background-color: #2E3238;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-left:10px;
+}
+
+input[type=number]:focus {
+  outline: none;
+  border: none;
+}
+
+input[type=number] { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+  outline: none;
+  border: none;   
+  background-color: #2E3238;
+  color: #E6E6E6;
+  line-height: 30px;
+  font-family: "helvetica";
+  text-align: center;
+  font-size: large;
+  width: 50%;
+}
+/*input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  outline: none;
+  border: none;   
+  background-color: #2E3238;
+  color: #E6E6E6;
+  line-height: 30px;
+  font-family: "helvetica";
+  text-align: center;
+  font-size: large;
+  width: 50%;      
+}*/
+
+.dbset {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .bset {
 	cursor: pointer;
-	color: #3683DC;
+	color: #E6E6E6;
 	line-height: 40px;
 	font-family: helvetica;
 	text-align: center;
-	font-size:large;
+	font-size: large;
 	font-weight: bold;
 	background-color: #2E3238;
-	max-width: 260px;
+	width: 100%;
 	height: 40px;
-	margin: auto;
 }
 
 
