@@ -42,6 +42,7 @@
   max-width: 400px;
   margin-left: 20px;
   margin-right: 20px;
+  height: 40px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -91,7 +92,7 @@
   line-height: 40px;
   background-color: #2E3238;
   height: 40px;
-  width: 100px;
+  width: 300px;
 }
 
 .dtime {

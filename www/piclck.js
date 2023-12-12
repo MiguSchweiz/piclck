@@ -40,6 +40,7 @@ function getAConf(){
     if (en == 1){
       $("#cena").click();
     }
+    alarmPanelSet();
 		selectStation("#a_"+st);
 		init=false;
 	});
@@ -80,6 +81,10 @@ function eventHandlers(){
   });
 	$( "#atime" ).change(function() {
 		buttonSet(true);
+	});
+	$( "#cena" ).change(function(){
+	  setAlarm();
+	  alarmPanelSet();
 	});
 	$( "#mon" ).change(function() {
 		buttonSet(true);
@@ -153,8 +158,12 @@ function resetButtons(){
 }
 
 function setAlarm(){
+  if (init){
+    return;
+  }
 	time=$( "#atime" ).val().replace(":",";");
 	wdy="";
+	aen='0';
 	if ( $("#sun").is(":checked")){
 		wdy+="0 ";
 	}if ( $("#mon").is(":checked")){
@@ -169,11 +178,13 @@ function setAlarm(){
 		wdy+="5 ";
 	}if ( $('#sat').is(":checked")){
 		wdy+="6 ";
-	} 
+	}if ( $("#cena").is(":checked")){
+	  aen="1";
+	}
 	wdy=wdy.trim();
 	slm=$( "#slum" ).val();
 	sl=slm;
-	conf=wdy+";"+time+";1;"+slm+";"+st;
+	conf=wdy+";"+time+";"+aen+";"+slm+";"+st;
 	jQuery.get("set.php?data="+encodeURIComponent(conf), function(d) {
 		//console.log(d);
 	});
@@ -193,7 +204,18 @@ function buttonSet(enabled){
 	}
 }
 
+function alarmPanelSet(){
+  if ( $("#cena").is(":checked")){
+    document.querySelectorAll(".alarms")[0].style.height=416+"px";
+    $("#tena").text("Alarm");
+  }else{
+	  document.querySelectorAll(".alarms")[0].style.height=40+"px";
+    $("#tena").text("Alarm disabled");
+  }
+}
+
 function setWidth(){
+  //$("#log").text(document.getElementById("alarms").offsetHeight);
   // Set weekdayselector width
   const element = document.getElementById("atime");
 	var ow=element.offsetWidth;
