@@ -86,6 +86,9 @@ function eventHandlers(){
 	  setAlarm();
 	  alarmPanelSet();
 	});
+	$( "#tena" ).on("click",function(){
+	  $( "#cena" ).click();
+	});
 	$( "#mon" ).change(function() {
 		buttonSet(true);
 	});
