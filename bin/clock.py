@@ -3,7 +3,7 @@
 import time
 import datetime,socket
 
-from Adafruit_LED_Backpack import SevenSegment
+from Adafruit_LED_Backpack import SevenSegment, AlphaNum4
 
 IP = '127.0.0.1'    # The remote host
 PORT = 9090           # The same port as used by the server
@@ -13,7 +13,8 @@ PORT = 9090           # The same port as used by the server
 
 
 segment = SevenSegment.SevenSegment(address=0x70)
-
+display = AlphaNum4.AlphaNum4(address=0x70,busnum=1)
+display.begin()
 # Initialize the display. Must be called once before using the display.
 segment.begin()
 segment.set_brightness(0)
@@ -33,6 +34,11 @@ def getData():
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((IP, int(PORT)))
         s.send(b'11111111')
+        data=s.recv(1024)
+        display.clear() 
+        display.print_str(data.decode()[0:4])
+        display.write_display()
+        time.sleep(0.5)
         data = s.recv(1024)
         s.close()
     except(socket.error):
