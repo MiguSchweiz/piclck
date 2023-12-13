@@ -220,21 +220,35 @@ function alarmPanelSet(){
 function setWidth(){
   //$("#log").text(document.getElementById("alarms").offsetHeight);
   // Set weekdayselector width
-  const element = document.getElementById("atime");
+  const element = document.getElementById("dtime");
 	var ow=element.offsetWidth;
 	
-	var wdwa=(ow-(6*5))/7;
+	var wdwa=(ow-(6*7))/7;
 	var wdw=Math.floor(wdwa);
+	var diff=ow-(((wdw+7)*6)+wdw);
+	
 	var temp = document.querySelectorAll(".lab");
   for (var i = 0; i < temp.length; i++) {
     temp[i].style.width = wdw+"px";
   }
+  for (i=0;i<diff ;i++){
+    temp[i].style.marginRight=4+"px";
+    //$("#log").text(i);
+  }
   //set station selector width
-  var sswa=(ow-(4*60))/3;
+  var sswa=(ow-(4*61))/3;
   var ssm=Math.floor(sswa);
+  diff=ow-((ssm*3)+(61*4));
+  //$("#log").text(diff);
   temp = document.querySelectorAll(".cs");
   for (var i = 0; i < temp.length; i++) {
     temp[i].style.paddingRight=ssm+"px";
+  }
+  for (var i = 0; i < diff; i++) {
+    if(i>=temp.length){
+      break;
+    }
+    temp[i].style.paddingRight=ssm+1+"px";
   }
 }
 

@@ -133,10 +133,12 @@ input[type=time]:focus {
 	padding-top: 20px;
 	padding-right: 0px;
 	padding-bottom: 17px;
-	/*padding-left: 8px;*/
+	padding-left: 0px;
 	background-color: #3A3F46;
 	max-width: 400px;
 	height: 40px;
+	overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .lab {
@@ -154,6 +156,7 @@ input[type=time]:focus {
   background: #2E3238;
   color: #E6E6E6;
   height: 40px;
+  border-width: 0px;
   /*width: 30px;
   margin-right: 3px;*/
   line-height: 40px;
@@ -175,6 +178,7 @@ input[type=time]:focus {
 .thss {
   border-style: none;
   margin: 0px;
+  padding: 0px;
 }
 .cs {
 	cursor: pointer;
